@@ -10,7 +10,7 @@ body
 
 
 .page-header {
-    background-color: #27917f;
+    background: linear-gradient(to right, #ff5e5e, #ffb65e, #eeff5e, #70ff5e, #5effb6, #5ef1ff, #5e73ff, #c35eff, #ff5e9e);
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
