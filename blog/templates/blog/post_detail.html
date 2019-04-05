@@ -18,7 +18,13 @@
           <p>{{ post.text|linebreaksbr }}</p>
         </div>
         <div class="col-sm-4">
-          <img class="post-detail-image" src="{{ post.image.url }}" alt="">
+
+          {% if post.image %}
+
+            <img class="post-detail-image" src="{{ post.image.url }}" alt="">
+
+          {% endif %}
+
         </div>
 
       </div>

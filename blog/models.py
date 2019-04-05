@@ -10,7 +10,7 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     image = models.ImageField(blank=True, null=True, upload_to='posts_images')
-    
+
 
     def publish(self):
         self.published_date = timezone.now()
@@ -18,3 +18,4 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+ 
