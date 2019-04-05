@@ -61,3 +61,11 @@ h1, h2, h3, h4 {
 .post-detail-image{
   width: 150px;
 }
+
+.login{
+  color: black;
+  background: linear-gradient(to right, #ffc6c6, #ffe5c6, #fffcc6, #ddffc6, #c6ffdf, #c6dfff, #e1c6ff);
+  text-align: center;
+  margin-left: 40%;
+  margin-right: 40%;
+}
