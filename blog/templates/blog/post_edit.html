@@ -7,20 +7,20 @@
           <div class="medal">
               {{ form.title.errors }}
               {{ form.title.label_tag }}
-              <input type="text" name="{{ form.title.html_name }}" required="" maxlength="200" id="{{ form.title.id_for_label }}" class="form-control">
+              <input type="text" name="{{ form.title.html_name }}" required="" maxlength="200" id="{{ form.title.id_for_label }}" class="form-control" value="{{ form.title.value }}">
           </div>
 
 
           <div class="beat">
               {{ form.text.errors }}
               {{ form.text.label_tag }}
-              <textarea type="text" name="{{ form.text.html_name }}" required="" maxlength="200" id="{{ form.text.id_for_label }}" class="form-control"></textarea>
+              <textarea type="text" name="{{ form.text.html_name }}" required="" maxlength="200" id="{{ form.text.id_for_label }}" class="form-control">{{ form.text.value }}</textarea>
           </div>
 
           <div class="roi">
               {{ form.image.errors }}
               {{ form.image.label_tag }}
-              <input type="file" name="{{ form.image.html_name }}" id="{{ form.image.id_for_label }}">
+              <input type="file" name="{{ form.image.html_name }}" id="{{ form.image.id_for_label }}" value="{{ form.image.value }}">
           </div>
 
 
