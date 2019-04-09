@@ -8,24 +8,27 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div class="page-header">
-          {% if user.is_authenticated %}
-            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+          <div class="page-header">
+            {% if user.is_authenticated %}
+              <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 
-              <a href="{% url 'logout' %}" class="pull-right">logout</a>
+                <a href="{% url 'logout' %}" class="pull">logout</a>
 
-          {% else %}
-            <a href="{% url 'login' %}" class="pull-right">login</a>
-          {% endif %}
+            {% else %}
+              <a href="{% url 'login' %}" class="pull">login</a>
+            {% endif %}
 
 
-            <h1><a href="/">Not humans</a></h1>
-        </div>
-        <div class="content">
-                {% block content %}
-                {% endblock %}
-                <p class="chat">TOUT CE QUI EST NOTÉ N'EST PAS À PRENDRE AU PREMIER DEGRES</p>
+              <h1><a href="/">Not humans</a></h1>
+          </div>
+            <div class="albert">
+              <div class="content">
+                      {% block content %}
+                      {% endblock %}
+              </div>
+          </div>
 
-        </div>
+          {% block javascript %}
+          {% endblock %}
     </body>
 </html>

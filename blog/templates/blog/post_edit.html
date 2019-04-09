@@ -1,9 +1,41 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <h2>New post</h2>
-    <form method="POST" class="post-form" enctype='multipart/form-data'>{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
+      <h2>{% if post %}Edit post: {{ post.title }}{% else %}New post{% endif %}</h2>
+      <form method="POST" class="post-form" enctype='multipart/form-data' >{% csrf_token %}
+
+          <div class="medal">
+              {{ form.title.errors }}
+              {{ form.title.label_tag }}
+              <input type="text" name="{{ form.title.html_name }}" required="" maxlength="200" id="{{ form.title.id_for_label }}" class="form-control">
+          </div>
+
+
+          <div class="beat">
+              {{ form.text.errors }}
+              {{ form.text.label_tag }}
+              <textarea type="text" name="{{ form.text.html_name }}" required="" maxlength="200" id="{{ form.text.id_for_label }}" class="form-control"></textarea>
+          </div>
+
+          <div class="roi">
+              {{ form.image.errors }}
+              {{ form.image.label_tag }}
+              <input type="file" name="{{ form.image.html_name }}" id="{{ form.image.id_for_label }}">
+          </div>
+
+
+          <div class="course">
+              {{ form.related_posts.errors }}
+              {{ form.related_posts.label_tag }}
+              <select multiple type="text" name="{{ form.related_posts.html_name }}" id="{{ form.text.id_for_label }}" class="form-control">
+                {% for other_post, is_related in posts %}
+                  <option value="{{ other_post.pk }}" {% if is_related %}selected=""{% endif %}>
+                    {{ other_post }}
+                  </option>
+                {% endfor %}
+              </select>
+          </div>
+
+          <button type="submit" class="btn btn-success">Save</button>
+      </form>
 {% endblock %}

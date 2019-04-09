@@ -5,7 +5,6 @@ h1 a, h2 a {
 
 body
 {
-  padding-left: 15px;
   background-image: url(/static/images/back-repeat.png);
 
 }
@@ -15,6 +14,7 @@ body
     background: linear-gradient(to right, #ff5e5e, #ffb65e, #eeff5e, #70ff5e, #5effb6, #5ef1ff, #5e73ff, #c35eff, #ff5e9e);
     margin-top: 0;
     padding: 20px 20px 20px 40px;
+    margin-left: 0;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -73,4 +73,35 @@ h1, h2, h3, h4 {
 .chat{
   font-size: 20px;
   text-align: center;
+}
+
+.list
+{
+  font-size: 18px;
+}
+
+.list-group
+{
+  margin: 200px;
+  margin-right: 70%;
+  margin-left: 0%;
+}
+
+
+.albert{
+  margin-right: 40px;
+}
+
+.pull
+{
+  float: right;
+  margin-top: 70px;
+  margin-right: 0;
+  padding-right: 0;
+
+}
+
+.medal, .roi, .beat, .course
+{
+  margin-bottom: 15px;
 }

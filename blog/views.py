@@ -17,9 +17,24 @@ def post_detail(request, pk):
     Post.objects.get(pk=pk)
     post = get_object_or_404(Post, pk=pk)
 
-
     return render(request, 'blog/post_detail.html', {'post': post})
 
+
+def get_other_posts(post=None):
+    # List every other posts and tell if it's already related or not
+    related_posts = []
+
+    if post:
+        all_posts = Post.objects.exclude(pk=post.pk).all()
+        already_related = post.related_posts.all()
+    else:
+        all_posts = Post.objects.all()
+        already_related = []
+
+    for other_post in all_posts:
+        related_posts.append((other_post, other_post in already_related))
+
+    return related_posts
 
 def post_new(request):
     if request.method == "POST":
@@ -32,10 +47,12 @@ def post_new(request):
             return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm()
-    return render(request, 'blog/post_edit.html', {'form': form})
+    other_posts=get_other_posts()
+    return render(request, 'blog/post_edit.html', {'form': form, 'posts': get_other_posts()})
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
+
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
@@ -46,4 +63,4 @@ def post_edit(request, pk):
             return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
-    return render(request, 'blog/post_edit.html', {'form': form})
+    return render(request, 'blog/post_edit.html', {'form': form, 'post': post, 'posts': get_other_posts(post)})
