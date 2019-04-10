@@ -4,39 +4,51 @@
   <div class="post">
     <div class="container container-fluid">
       <div class="row">
+          <div class='col-sm-8'>
+            <div class="row">
+            {% if post.published_date %}
+              <div class="date">
+                  {{ post.published_date }}
+              </div>
+            {% endif %}
 
-        <div class='col-sm-8'>
-          {% if post.published_date %}
-            <div class="date">
-                {{ post.published_date }}
+            {% if user.is_authenticated %}
+              <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            {% endif %}
+
+              <div class="microsoft">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+              </div>
             </div>
-          {% endif %}
+          </div>
 
-          {% if user.is_authenticated %}
-            <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-          {% endif %}
+          <div class="col-sm-4">
 
-          <h2>{{ post.title }}</h2>
-          <p>{{ post.text|linebreaksbr }}</p>
-        </div>
-        <div class="col-sm-4">
 
-          {% if post.image %}
-            <img class="post-detail-image" src="{{ post.image.url }}" alt="">
-          {% endif %}
+            {% if post.image %}
+            <div class="apple">
+              <img class="post-detail-image" src="{{ post.image.url }}" alt="">
+            </div>
+            {% endif %}
+          </div>
 
+          </div>
         </div>
 
-        <div class="list">
 
-          {% if post.related_posts %}
-            <ul class="list-group list-group-flush">
-              {% for related_post in post.related_posts.all %}
-                <li class="list-group-item"> <a href="{% url 'post_detail' pk=related_post.pk %}">{{ related_post.title }} </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
 
+          <div class="list">
+            <div class='col-sm-12'
+
+              {% if post.related_posts %}
+                <ul class="list-group list-group-flush">
+                  {% for related_post in post.related_posts.all %}
+                    <li class="list-group-item"> <a href="{% url 'post_detail' pk=related_post.pk %}">{{ related_post.title }} </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
         </div>
 
       </div>
