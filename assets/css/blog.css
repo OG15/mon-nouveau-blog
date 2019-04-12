@@ -124,7 +124,7 @@ div#galerie
   box-shadow: 2px 3px 3px #b5b5b5;
   border-radius: 15px;
   padding: 15px ;
-  margin: 15px 30px ;
+  margin-bottom: 50px;
   text-align: center ;
   font: 0.9em Arial, serif ;
 }
@@ -230,4 +230,125 @@ p{
 
 .apple{
   margin: 7px;
+}
+
+
+.code div {
+  display: inline-block;
+  margin: 0px 100px 0 100px;
+}
+
+.social
+{
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 2px 3px 3px #b5b5b5;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.code{
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 2px 3px 3px #b5b5b5;
+  margin-top: 10px;
+  font-size: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.social div{
+  margin: 0 150px 0 150px;
+  display: inline-block;
+}
+
+
+.handball
+{
+  color: #54e500;
+  font-size: 25px;
+
+}
+
+.fa-html5
+{
+  color: #474747;
+}
+
+.fa-html5:hover
+{
+  color: orange;
+}
+
+.fa-python
+{
+  color: #474747;
+}
+
+.fa-python:hover{
+  color: #d7ff60;
+}
+
+.fa-js-square
+{
+  color: #474747;
+}
+
+.fa-js-square:hover{
+  color: #ffe900;
+}
+
+.fa-youtube
+{
+  color: #474747;
+}
+
+.fa-youtube:hover{
+  color: red;
+}
+
+.fa-github
+{
+  color: #474747;
+}
+
+.fa-github:hover{
+  color: black;
+}
+
+.fa-css3-alt
+{
+  color: #474747;
+}
+
+.fa-css3-alt:hover{
+  color: #60aaff;
+}
+
+.fa-instagram
+{
+  color: #474747;
+}
+
+.fa-instagram:hover
+{
+  color: #d1003b;
+}
+
+.final
+{
+  text-align: center;
+  color: #cccccc;
+  margin-top: 50px;
+}
+
+.final2{
+  margin-bottom: 50px;
+  text-align: center;
+  color: #cccccc;
 }
