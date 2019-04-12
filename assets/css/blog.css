@@ -191,6 +191,15 @@ dl#photo img
   margin-bottom: 30px;
 }
 
+.code div{
+  text-align: center;
+}
+
+
+.social div{
+  text-align: center;
+}
+
 @media screen and (max-width: 720px)
 {
   .google
@@ -209,11 +218,15 @@ dl#photo img
   {
     float: none;
   }
+
 }
 
 
 p{
   color: black;
+
+
+
 }
 
 
@@ -233,10 +246,7 @@ p{
 }
 
 
-.code div {
-  display: inline-block;
-  margin: 0px 100px 0 100px;
-}
+
 
 .social
 {
@@ -263,8 +273,8 @@ p{
 
 
 .social div{
-  margin: 0 150px 0 150px;
   display: inline-block;
+
 }
 
 
